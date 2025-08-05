@@ -1,3 +1,4 @@
+
 img{
     width:100%;
     height:100%;
@@ -23,7 +24,91 @@ section{
     flex-direction: column;
     gap: 5px;
 }
-/*responsive media query*/
+.container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,100px) 20px 20px;
+    gap: 10px;
+}
+.box{
+    background-color: rgb(213, 201, 201);
+}
+.container #box-1{
+    grid-row: span 5;
+}
+.container #box-11, #box-12{
+    grid-column: span 3;
+}
+.container #box-6, #box-7, #box-9, #box-10{
+    background-color: red;
+}
+/* .appp{
+    height: 100vh;
+    width:100%;
+} */
+.app{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(4,1fr);
+    gap: 20px;
+}
+.bbox{
+    background-color: rgb(255, 233, 135);
+    border-radius: 10px;
+    padding: 10px;
+    border:solid 2px orange;
+}
+.app #bbox-1{
+    grid-column: span 5;
+    padding:20px;
+
+}
+.app #bbox-2{
+    grid-row: span 2;
+    height: 200px;
+}
+.app #bbox-3{
+    grid-column: span 3;
+    grid-row: span 2;
+}
+.app #bbox-6{
+    grid-column: span 5;
+    padding:20px;
+}
+.header, .nav, .main, .sidebar, .advertise, .footer{
+    background-color: bisque;
+    border:2px solid red;
+    padding:5px;
+    border-radius: 5px;
+}
+.header{
+    grid-area: header;
+}
+.nav{
+    grid-area:nav;
+}
+.main{
+    grid-area:main;
+}
+.sidebar{
+    grid-area: sidebar;
+}
+.advertise{
+    grid-area: advertise;
+}
+.footer{
+    grid-area: footer;
+}
+.ccc{
+    display:grid;
+    gap: 20px;
+    grid-template-areas: 
+    "header header header header"
+    "nav main main sidebar"
+    "nav main main advertise"
+    "footer footer footer footer";
+}
+/*responsive media query small*/
 
 @media screen and (max-width:576px){
     .row{
@@ -32,6 +117,24 @@ section{
     }
     .square{
         grid-template-columns: repeat(1,1fr);
+    }
+}
+/*responsive media query medium*/
+@media screen and (min-width:576px) and (max-width:992px){
+    .row{
+        flex-direction: column;
+        height: auto;
+    }
+}
+@media screen and (max-width:576px){
+    .ccc{
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "sidebar"
+        "advertise"
+        "footer";
     }
 }
 
