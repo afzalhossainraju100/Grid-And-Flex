@@ -8,12 +8,12 @@ img{
     gap: 5px;
 }
 .vertical-collage img{
-    height:calc((100% -5px)/2)
+    height:50%;
 }
 .row > div{
     flex:1;
 }
-.workdiv{
+.square{
     display:grid;
     grid-template-columns: repeat(2,1fr);
     gap: 5px;
@@ -23,3 +23,15 @@ section{
     flex-direction: column;
     gap: 5px;
 }
+/*responsive media query*/
+
+@media screen and (max-width:576px){
+    .row{
+        flex-direction: column;
+        height: auto;
+    }
+    .square{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
